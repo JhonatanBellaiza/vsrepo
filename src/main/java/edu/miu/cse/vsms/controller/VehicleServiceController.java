@@ -2,8 +2,11 @@ package edu.miu.cse.vsms.controller;
 
 import edu.miu.cse.vsms.dto.request.ServiceRequestDto;
 import edu.miu.cse.vsms.dto.response.VehicleServiceResponseDto;
+import edu.miu.cse.vsms.exception.GlobalExceptionHandler;
 import edu.miu.cse.vsms.service.VehicleService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,8 +24,8 @@ public class VehicleServiceController {
     @PostMapping
     public ResponseEntity<VehicleServiceResponseDto> assignService(@RequestBody ServiceRequestDto request) {
         // Write your code here
-
-        return null;
+        VehicleServiceResponseDto vehicleServiceResponseDto = vehicleService.assignService(request);
+        return new ResponseEntity<>(vehicleServiceResponseDto, HttpStatus.CREATED);
     }
     
 }

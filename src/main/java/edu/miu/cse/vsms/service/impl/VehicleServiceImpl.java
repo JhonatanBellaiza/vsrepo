@@ -22,6 +22,25 @@ public class VehicleServiceImpl implements VehicleService {
     public VehicleServiceResponseDto assignService(ServiceRequestDto request) {
         // Write your code here
 
-        return null;
+        VService vService = new VService(
+                request.serviceName(),
+                request.cost(),
+                request.vehicleType(),
+                fetchEmployee(request.employeeId())
+
+        );
+
+        VService savedVservice = vehicleServiceRepository.save(vService);
+        return new VehicleServiceResponseDto(
+                savedVservice.getId(),
+                savedVservice.getServiceName(),
+                savedVservice.getCost(),
+                savedVservice.getVehicleType()
+        );
+    }
+
+    private Employee fetchEmployee(Long id) {
+        return employeeRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Empoyee not found with id " + id));
     }
 }
