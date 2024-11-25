@@ -1,12 +1,7 @@
 **POST: http://localhost:8080/api/v1/employees**
-```
-{
-  "name": "John Doe",
-  "email": "john.doe@example.com",
-  "phone": "1234567890",
-  "hireDate": "2024-01-10"
-}
-```
+
+![Create Employee](ims/1.png)
+
 **Response**
 ```
 {
