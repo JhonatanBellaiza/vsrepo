@@ -1,158 +1,25 @@
 **POST: http://localhost:8080/api/v1/employees**
 
-![Create Employee](ims/1.png)
+![Create Employee](imgs/1.png)
 
-**Response**
-```
-{
-  "id": 1,
-  "name": "John Doe",
-  "email": "john.doe@example.com",
-  "phone": "1234567890",
-  "hireDate": "2024-01-10",
-  "services": [ ]
-}
-```
+
 **POST: http://localhost:8080/api/v1/services**
-```
-{
-  "employeeId": 1,
-  "serviceName": "Oil Change",
-  "cost": 120.00,
-  "vehicleType": "Motorcycle"
-}
-```
-**Response**
-```
-{
-    "id": 1,
-    "serviceName": "Oil Change",
-    "cost": 120.0,
-    "vehicleType": "Motorcycle"
-}
-```
+![Create service](imgs/5.png)
 **GET: http://localhost:8080/api/v1/employees**
 **Response**
-```
-[
-    {
-        "id": 1,
-        "name": "John Doe",
-        "email": "john.newemail@example.com",
-        "phone": "0987654321",
-        "hireDate": "2024-01-10",
-        "services": [
-            {
-                "id": 1,
-                "serviceName": "Oil Change",
-                "cost": 120.0,
-                "vehicleType": "Motorcycle"
-            }
-        ]
-    }
-]
-```
+![Employee atached](imgs/6.png)
 
 **POST: http://localhost:8080/api/v1/services**
-```
-{
-  "employeeId": 1,
-  "serviceName": "Tire Replacement",
-  "cost": 180.50,
-  "vehicleType": "Truck"
-}
-```
+![iamd](imgs/7.png)
 
-**Response**
-{
-    "id": 2,
-    "serviceName": "Tire Replacement",
-    "cost": 180.5,
-    "vehicleType": "Truck"
-}
 
 **GET: http://localhost:8080/api/v1/employees/1**
 **Response**
-```
-{
-    "id": 1,
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "phone": "1234567890",
-    "hireDate": "2024-01-10",
-    "services": [
-        {
-            "id": 1,
-            "serviceName": "Oil Change",
-            "cost": 120.0,
-            "vehicleType": "Motorcycle"
-        },
-        {
-            "id": 2,
-            "serviceName": "Tire Replacement",
-            "cost": 180.5,
-            "vehicleType": "Truck"
-        }
-    ]
-}
-```
+![img 8](imgs/8.png)
 
 **GET: http://localhost:8080/api/v1/employees**
 **Response**
-```
-[
-    {
-        "id": 1,
-        "name": "John Doe",
-        "email": "john.doe@example.com",
-        "phone": "1234567890",
-        "hireDate": "2024-01-10",
-        "services": [
-            {
-                "id": 1,
-                "serviceName": "Oil Change",
-                "cost": 120.0,
-                "vehicleType": "Motorcycle"
-            },
-            {
-                "id": 2,
-                "serviceName": "Tire Replacement",
-                "cost": 180.5,
-                "vehicleType": "Truck"
-            }
-        ]
-    }
-]
-```
+![img 9](imgs/9.png)
 
 **PATCH: http://localhost:8080/api/v1/employees/1**
-```
-{
-  "email": "john.newemail@example.com",
-  "phone": "0987654321"
-}
-```
-**Response:**
-```
-{
-    "id": 1,
-    "name": "John Doe",
-    "email": "john.newemail@example.com",
-    "phone": "0987654321",
-    "hireDate": "2024-01-10",
-    "services": [
-        {
-            "id": 1,
-            "serviceName": "Oil Change",
-            "cost": 120.0,
-            "vehicleType": "Motorcycle"
-        },
-        {
-            "id": 2,
-            "serviceName": "Tire Replacement",
-            "cost": 180.5,
-            "vehicleType": "Truck"
-        }
-    ]
-}
-```
+![img 10](imgs/10.png)
